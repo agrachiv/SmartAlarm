@@ -29,7 +29,7 @@ Random Sklizenka = new Random();
 		int result2 = q+10*w;
 		int resultresult1 = result2+result;
 		int c = randomik.nextInt(2);
-		double endResult = 0 ;
+		int endResult = 0 ;
         Button button1aa = (Button)findViewById(R.id.button1a);
         Button button2aa = (Button)findViewById(R.id.button2a);
         Button button3aa = (Button)findViewById(R.id.button3a);
@@ -38,8 +38,8 @@ Random Sklizenka = new Random();
 		textView1.setText(result2+"+"+result+"=?");
 
 		
-		double wResult = endResult +(Math.pow(10,randomik.nextInt(1)))*(randomik.nextInt(8)+1); 
-		double wResult2 = endResult +(Math.pow(10,randomik.nextInt(1)))*(randomik.nextInt(8)+1); 
+		int wResult = (Int)(endResult +(Math.pow(10,randomik.nextInt(1)))*(randomik.nextInt(8)+1)); 
+		int wResult2 = (Int)(endResult +(Math.pow(10,randomik.nextInt(1)))*(randomik.nextInt(8)+1)); 
 		
 		 if(c==0){
 			 button1aa.setText(""+endResult+"");
