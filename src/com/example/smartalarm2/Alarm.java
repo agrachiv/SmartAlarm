@@ -31,12 +31,12 @@ public class Alarm extends Activity {
 	}    	
 	public void Level2(View g) {
 		DiffLvl = 2;
-		Intent Level3 = new Intent(this, Level2.class);
+		Intent Level3 = new Intent(this, Level3.class);
 	startActivity(Level3);
 }
 	public void Level1(View h) {
 		DiffLvl = 1;
-		Intent Level3 = new Intent(this, Level1.class);
+		Intent Level3 = new Intent(this, Level3.class);
 	startActivity(Level3);
 }
 }
