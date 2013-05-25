@@ -47,8 +47,8 @@ Random Sklizenka = new Random();
 			endResult = resultresult2;
 			textView1.setText(result2+"-"+result+"=?");
 		}
-		int wResult = (int)endResult +(Math.pow(10,randomik.nextInt(2)))*(randomik.nextInt(8)+1); 
-		int wResult2 = (int)endResult +(Math.pow(10,randomik.nextInt(2)))*(randomik.nextInt(8)+1); 
+		int wResult = (int)(endResult +(Math.pow(10,randomik.nextInt(2)))*(randomik.nextInt(8)+1)); 
+		int wResult2 = (int)(endResult +(Math.pow(10,randomik.nextInt(2)))*(randomik.nextInt(8)+1)); 
 		
 		 if(c==0){
 			 button1aa.setText(""+endResult+"");
