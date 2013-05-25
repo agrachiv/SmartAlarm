@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Alarm extends Activity {
-	
+	public static int DiffLvl;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,15 +25,18 @@ public class Alarm extends Activity {
 		return true;
 	}
 	public void Level3(View f) {
+		DiffLvl = 3;
 			Intent Level3 = new Intent(this, Level3.class);
     	startActivity(Level3);
 	}    	
 	public void Level2(View g) {
-		Intent Level2 = new Intent(this, Level2.class);
-	startActivity(Level2);
+		DiffLvl = 2;
+		Intent Level3 = new Intent(this, Level2.class);
+	startActivity(Level3);
 }
 	public void Level1(View h) {
-		Intent Level1 = new Intent(this, Level1.class);
-	startActivity(Level1);
+		DiffLvl = 1;
+		Intent Level3 = new Intent(this, Level1.class);
+	startActivity(Level3);
 }
 }

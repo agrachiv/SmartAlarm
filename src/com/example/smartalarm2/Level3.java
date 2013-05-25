@@ -12,30 +12,31 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Level3 extends Activity {
-Random randomik = new Random();
-Random Sklizenka = new Random();
+Random rand = new Random();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_level3);
-		
-		int a = randomik.nextInt(9);
-		int b = randomik.nextInt(9);
-		int d = randomik.nextInt(9);
-		int e = randomik.nextInt(9);
-		
-		int t = randomik.nextInt(9);
-		int r = randomik.nextInt(9);
-		int w = randomik.nextInt(9);
-		int q = randomik.nextInt(9);
-		int result = a+10*b+100*d+1000*e;
-		int result2 = q+10*w+100*r+1000*t;
-		int resultresult1 = result2+result;
-		int resultresult2 = result2-result;
-		int c = randomik.nextInt(2);
-		int plusminus = Sklizenka.nextInt(2);
-		int endResult = 0 ;
+		int result = 0;
+		int result2 = 0;
+		switch(Alarm.DiffLvl) {
+			case 3:
+		result = rand.nextInt(9999);
+		result2 = rand.nextInt(9999);
+		break;
+			case 2:
+				result = rand.nextInt(999);
+				result2 = rand.nextInt(999);
+				break;
+			case 1:
+				result = rand.nextInt(99);
+				result2 = rand.nextInt(99);
+				break;
+		}
+		int c = rand.nextInt(3);
+		int plusminus = rand.nextInt(2);
+		int endResult;
         Button button1aa = (Button)findViewById(R.id.button1a);
         Button button2aa = (Button)findViewById(R.id.button2a);
         Button button3aa = (Button)findViewById(R.id.button3a);
@@ -43,27 +44,31 @@ Random Sklizenka = new Random();
         
        
 		if(plusminus==1){
-			endResult = resultresult1; 
+			endResult = result + result2; 
 			textView1.setText(result2+"+"+result+"=?");
 		}else{
-			endResult = resultresult2;
+			endResult = result2 - result;
 			textView1.setText(result2+"-"+result+"=?");
 		}
-		int wResult = (int)(endResult +(Math.pow(10,randomik.nextInt(3)))*(randomik.nextInt(8)+1)); 
-		int wResult2 = (int)(endResult +(Math.pow(10,randomik.nextInt(3)))*(randomik.nextInt(8)+1)); 
+		int wResult = (int)(endResult +(Math.pow(10,rand.nextInt(3)))*(rand.nextInt(8)+1)); 
+		int wResult2 = (int)(endResult +(Math.pow(10,rand.nextInt(3)))*(rand.nextInt(8)+1)); 
 		
-		 if(c==0){
+		 switch(c) {
+			 case 1:
 			 button1aa.setText(""+endResult+"");
 			 button2aa.setText(""+wResult+"");
 			 button3aa.setText(""+wResult2+"");
-		 }else if(c==1){
+		  break;
+		  case 2:
 			 button2aa.setText(""+endResult+"");
 			 button1aa.setText(""+wResult+"");
 			 button3aa.setText(""+wResult2+"");
-		 }else if(c==2){
+		 break;
+		 case 3:
 			 button3aa.setText(""+endResult+"");
 			 button2aa.setText(""+wResult+"");
 			 button1aa.setText(""+wResult2+"");
+			 break;
 		 }
 		 }
 
