@@ -17,7 +17,7 @@ Random rand = new Random();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_level3);
+		setContentView(R.layout.activity_count2);
 		int result = 0;
 		int result2 = 0;
 		switch(Alarm.DiffLvl) {
@@ -34,12 +34,12 @@ Random rand = new Random();
 				result2 = rand.nextInt(99);
 				break;
 		}
-		int c = rand.nextInt(3);
+		int c = rand.nextInt(2);
 		int plusminus = rand.nextInt(2);
 		int endResult;
-        Button button1aa = (Button)findViewById(R.id.button1a);
-        Button button2aa = (Button)findViewById(R.id.button2a);
-        Button button3aa = (Button)findViewById(R.id.button3a);
+        Button button1aa = (Button)findViewById(R.id.button1aa);
+        Button button2aa = (Button)findViewById(R.id.button2aa);
+        Button button3aa = (Button)findViewById(R.id.button3aa);
         TextView textView1 = (TextView)findViewById(R.id.textView1);
         
        
@@ -54,17 +54,17 @@ Random rand = new Random();
 		int wResult2 = (int)(endResult +(Math.pow(10,rand.nextInt(3)))*(rand.nextInt(8)+1)); 
 		
 		 switch(c) {
-			 case 1:
+			 case 0:
 			 button1aa.setText(""+endResult+"");
 			 button2aa.setText(""+wResult+"");
 			 button3aa.setText(""+wResult2+"");
 		  break;
-		  case 2:
+		  case 1:
 			 button2aa.setText(""+endResult+"");
 			 button1aa.setText(""+wResult+"");
 			 button3aa.setText(""+wResult2+"");
 		 break;
-		 case 3:
+		 case 2:
 			 button3aa.setText(""+endResult+"");
 			 button2aa.setText(""+wResult+"");
 			 button1aa.setText(""+wResult2+"");
@@ -78,4 +78,5 @@ Random rand = new Random();
 		getMenuInflater().inflate(R.menu.activity_level3, menu);
 		return true;
 	}
+	
 }
