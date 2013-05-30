@@ -20,6 +20,7 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
+        android:onClick="score"
         android:text="Button" />
 
     <Button
@@ -29,6 +30,7 @@
         android:layout_below="@+id/button2aa"
         android:layout_marginTop="20dp"
         android:layout_toLeftOf="@+id/button2aa"
+        android:onClick="score"
         android:text="Button" />
 
     <Button
@@ -37,6 +39,15 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button1aa"
         android:layout_toRightOf="@+id/button2aa"
+        android:onClick="score"
         android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="Правильных ответов - 0." />
 
 </RelativeLayout>
