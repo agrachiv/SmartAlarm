@@ -13,9 +13,7 @@ import android.widget.TextView;
 
 public class Level3 extends Activity {
 Random rand = new Random();
-int c = rand.nextInt(2);
-int score1 = 0;
-TextView textView2 = (TextView)findViewById(R.id.textView2);
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,7 +34,7 @@ TextView textView2 = (TextView)findViewById(R.id.textView2);
 				result2 = rand.nextInt(99);
 				break;
 		}
-		
+		int c = rand.nextInt(2);
 		int plusminus = rand.nextInt(2);
 		int endResult;
         Button button1aa = (Button)findViewById(R.id.button1aa);
@@ -45,7 +43,7 @@ TextView textView2 = (TextView)findViewById(R.id.textView2);
         TextView textView1 = (TextView)findViewById(R.id.textView1);
         
        
-    	if(plusminus==1){
+		if(plusminus==1){
 			endResult = result + result2; 
 			textView1.setText(result2+"+"+result+"=?");
 		}else{
@@ -80,15 +78,5 @@ TextView textView2 = (TextView)findViewById(R.id.textView2);
 		getMenuInflater().inflate(R.menu.activity_level3, menu);
 		return true;
 	}
-	public void score(View score){
-		if((score.getId()==R.id.button1aa && c == 0)||(score.getId()==R.id.button2aa && c == 1)||(score.getId()==R.id.button2aa && c == 2)){
-			score1 = score1 + 1;
-			textView2.setText("Rights -" + score1);
-			}else{
-			score1 = score1 - 1;
-			textView2.setText("Rights -" + score1);
-			}
-		}
-	}
-
-
+	
+}
