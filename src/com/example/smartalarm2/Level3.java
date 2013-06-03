@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 public class Level3 extends Activity {
 Random rand = new Random();
+public static int score1;
+int c = Alarm.DiffLvl;
+TextView textView2 = (TextView)findViewById(R.id.textView2);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ Random rand = new Random();
         Button button2aa = (Button)findViewById(R.id.button2aa);
         Button button3aa = (Button)findViewById(R.id.button3aa);
         TextView textView1 = (TextView)findViewById(R.id.textView1);
+        
         
        
 		if(plusminus==1){
@@ -78,5 +82,17 @@ Random rand = new Random();
 		getMenuInflater().inflate(R.menu.activity_level3, menu);
 		return true;
 	}
-	
-}
+		public void score(View score){
+			if((score.getId()==R.id.button1aa && c == 0)||(score.getId()==R.id.button2aa && c == 1)||(score.getId()==R.id.button2aa && c == 2)){
+						score1 = score1 + 1;
+						textView2.setText("Rights -" + score1);
+							}else{
+						score1 = score1 - 1;
+						textView2.setText("Rights -" + score1);
+					}
+				}
+			}
+		
+		
+
+
