@@ -3,9 +3,7 @@ package com.example.smartalarm2;
 import java.util.Random;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +11,9 @@ import android.widget.TextView;
 
 public class Level3 extends Activity {
 Random rand = new Random();
+public static int score1;
+public static int c = 0;
+public static int cn = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ Random rand = new Random();
         Button button3aa = (Button)findViewById(R.id.button3aa);
         TextView textView1 = (TextView)findViewById(R.id.textView1);
         
+        
        
 		if(plusminus==1){
 			endResult = result + result2; 
@@ -58,16 +60,19 @@ Random rand = new Random();
 			 button1aa.setText(""+endResult+"");
 			 button2aa.setText(""+wResult+"");
 			 button3aa.setText(""+wResult2+"");
+			 cn = 0;
 		  break;
 		  case 1:
 			 button2aa.setText(""+endResult+"");
 			 button1aa.setText(""+wResult+"");
 			 button3aa.setText(""+wResult2+"");
+			cn = 1;
 		 break;
 		 case 2:
 			 button3aa.setText(""+endResult+"");
 			 button2aa.setText(""+wResult+"");
 			 button1aa.setText(""+wResult2+"");
+			 cn = 2;
 			 break;
 		 }
 		 }
@@ -79,4 +84,16 @@ Random rand = new Random();
 		return true;
 	}
 	
-}
+	public void score(View score){
+		if((score.getId()==R.id.button1aa && cn == 0)||(score.getId()==R.id.button2aa && c == 1)||(score.getId()==R.id.button2aa && c == 2)){
+			TextView textView2 = (TextView)findViewById(R.id.textView2);
+			score1 = score1 + 1;
+			textView2.setText(""+score1+"");
+						}else{
+			score1 = score1 - 1;
+			TextView textView2 = (TextView)findViewById(R.id.textView2);
+			textView2.setText(""+score1+"");
+				}
+			}
+			}
+		
