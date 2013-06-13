@@ -85,7 +85,7 @@ public static int cn = 0;
 	}
 	
 	public void score(View score){
-		if((score.getId()==R.id.button1aa && cn == 0)||(score.getId()==R.id.button2aa && c == 1)||(score.getId()==R.id.button2aa && c == 2)){
+		if((score.getId()==R.id.button1aa && cn == 0)||(score.getId()==R.id.button2aa && cn == 1)||(score.getId()==R.id.button2aa && cn == 2)){
 			TextView textView2 = (TextView)findViewById(R.id.textView2);
 			score1 = score1 + 1;
 			textView2.setText(""+score1+"");
